@@ -19,15 +19,15 @@
 }
 
 .master-container {
-  @apply mt-10 mb-20 flex w-screen flex-col items-center justify-center space-x-0 space-y-10 lg:flex-row lg:space-x-32 lg:space-y-0 xl:space-x-20;
+  @apply mt-10 mb-20 flex w-screen flex-col items-center justify-center space-x-0 space-y-10 lg:flex-row lg:space-x-20 lg:space-y-0 xl:space-x-20;
 }
 
 .task-container {
-  @apply flex flex-col items-center justify-center space-y-5 sm:w-1/2;
+  @apply flex w-9/12 flex-col items-center justify-center space-y-5 md:w-[36rem] xl:w-[46rem];
 }
 
 .edit-task {
-  @apply flex w-full flex-row items-center justify-around space-x-5 text-center lg:w-[40rem];
+  @apply flex w-full flex-row items-center justify-around space-x-5 text-center xl:w-[40rem];
 }
 
 .task-desc {
@@ -71,7 +71,7 @@
 }
 
 .hero-card {
-  @apply max-h-[30rem] lg:self-start;
+  @apply flex max-h-[30rem] flex-col;
 }
 
 .cards-container {
@@ -83,7 +83,7 @@
 }
 
 .hero-image {
-  @apply h-64 rounded-3xl object-cover transition delay-100 duration-500 ease-in-out hover:translate-y-5 hover:skew-x-2 hover:skew-y-2 hover:scale-105 hover:shadow-2xl lg:h-80;
+  @apply h-64 self-start rounded-3xl object-cover transition delay-100 duration-500 ease-in-out hover:translate-y-5 hover:skew-x-2 hover:skew-y-2 hover:scale-105 hover:shadow-2xl lg:h-80;
 }
 
 .info {
@@ -91,7 +91,7 @@
 }
 
 .info-screen {
-  @apply -top-4 flex h-screen w-screen flex-col items-center justify-start p-10 pb-0;
+  @apply -top-4 flex h-screen w-screen flex-col items-center justify-start p-10 pt-20 pb-0;
 }
 
 .info-box {
