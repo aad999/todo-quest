@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-bar {
+  @apply flex h-32 w-screen flex-row items-center justify-center space-x-5 bg-gradient-to-r;
+}
+
+.sub-page {
+  @apply transform cursor-pointer text-base transition duration-500 ease-in-out hover:scale-125 hover:text-red-400 hover:underline;
+}
+
+.master-container {
+  @apply mt-10 flex w-screen flex-col items-center justify-center space-x-0 space-y-10 lg:flex-row lg:space-x-24 lg:space-y-0;
+}
+
+.task-container {
+  @apply flex flex-col items-center justify-center space-y-5 sm:w-1/2;
+}
+
+.edit-task {
+  @apply flex w-full flex-row items-center justify-around space-x-5 text-center lg:w-[40rem];
+}
+
+.task-desc {
+  @apply w-full rounded-3xl border-2 border-gray-500 bg-transparent p-2 text-center transition duration-500 ease-in-out focus:border-2 focus:border-red-400 focus:outline-0;
+}
+
+.task-time {
+  @apply w-40 rounded-3xl border-2 border-gray-500 bg-transparent p-2 text-center transition duration-500 ease-in-out focus:border-2 focus:border-blue-700 focus:outline-0;
+}
+
+.push {
+  @apply rounded-full p-4 transition duration-150 ease-in-out hover:scale-110 focus:scale-100;
+}
+
+.task-queue {
+  @apply flex max-h-[30rem] w-full flex-col items-center space-y-4 rounded-3xl p-2 lg:w-[45rem];
+}
+
+.task-queue::-webkit-scrollbar {
+  display: none;
+}
+
+.pushed {
+  @apply flex w-full items-center justify-center space-x-5 lg:w-[40rem];
+}
+
+.pushed-desc {
+  @apply w-full truncate rounded-3xl border-2 p-2 text-center transition duration-500 ease-in-out focus:border-2 focus:outline-0;
+}
+
+.pushed-time {
+  @apply w-40 rounded-3xl border-2 p-2 text-center transition duration-500 ease-in-out focus:border-2 focus:outline-0;
+}
+
+.icon {
+  @apply w-5 sm:w-6;
+}
+
+.card{
+  @apply flex items-center justify-center
+}
+
+.hero-card {
+  @apply h-72 w-72 rounded-3xl bg-white;
+}
+
+.cards-container {
+  @apply grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 items-center justify-center;
+}
+
+.card-image {
+  @apply h-52 rounded-3xl object-cover transition delay-100 duration-500 ease-in-out hover:translate-y-5 hover:skew-x-2 hover:skew-y-2 hover:scale-105 hover:shadow-2xl;
+}
+
+.hero-image {
+  @apply h-64 rounded-3xl object-cover transition delay-100 duration-500 ease-in-out hover:translate-y-5 hover:skew-x-2 hover:skew-y-2 hover:scale-105 hover:shadow-2xl;
+}
+
+.info {
+  @apply h-screen w-screen;
+}
+
+.info-screen {
+  @apply -top-4 flex h-screen w-screen justify-center p-10;
+}
+
+.info-box{
+  @apply shadow-lg rounded-3xl md:w-1/2 w-80 h-fit backdrop-blur-3xl bg-white/10 p-7 pb-10;
+}
+
+.info-heading{
+  @apply font-extrabold text-xl text-white text-center;
+}
+
+.info-para{
+  @apply mt-5 text-sm text-white text-justify;
+}
+
+.info-footer{
+  @apply mt-5 text-xs text-white text-justify italic;
+}
