@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+
+  <title>Shortly</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-black flex flex-col space-y-5 items-center text-white min-h-screen">
+  <div class="nav-bar">
+    <div class="sub-page nav-tasks">tasks</div>
+    <div class="sub-page nav-cards">cards</div>
+    <div class="sub-page reset" onclick="reset()">reset</div>
+    <div class="sub-page nav-coins">
+      <div class="flex space-x-2">
+        <img src="./images/coins.svg" alt="" srcset="" class="coins-icon w-5">
+        <p class="coins">0</p>
+      </div>
+    </div>
+  </div>
+  <section class="tasks">
+    <div class="master-container">
+      <div class="hero-card">
+        <img src="./images/hawk_eye.webp" alt="" srcset="" class="hero-image hover:shadow-violet-500">
+      </div>
+      <div class="task-container">
+        <div class="edit-task">
+          <input title="task-desc" type="text" name="task" id="task-desc" class="task-desc" placeholder="type...">
+          <!-- <input title="task-time" type="time" name="task-time" id="task-time" class="task-time"> -->
+          <button title="push" type="submit"
+            class="push bg-blue-500/50 border-2 border-blue-500 shadow-sm hover:shadow-blue-400"><img
+              src="./images/down.svg" alt="" srcset="" class="icon"></button>
+        </div>
+        <div class="task-queue">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="cards hidden">
+    <div class="cards-container w-screen p-10">
+      <div class="blank-end space-x-0"></div>
+    </div>
+  </section>
+  <section class="info hidden">
+    <div class="info-screen bg-gradient-to-b from-black to-violet-700">
+      <div class="info-box">
+        <h1 class="info-heading">The Todo Quest</h1>
+        <p class="info-para">How about turning your boring to-do list into an epic adventure? Welcome to The Todo Quest,
+          where every task is a challenge, and every challenge is a reward. Here’s how it works: you earn 20 coins for
+          adding a task, and 100 coins for completing it. But be careful: you lose 50 coins for deleting a task. And if
+          you go broke, you lose all your cards too. Yikes! You can spend your coins on awesome Marvel Superhero cards
+          from the cards section. So, stay motivated and pursue your goals. Who wouldn’t want to be Captain America or
+          Spider Man?
+        </p>
+
+        <p class="info-footer">
+          *Price of ith card from top is ix300.
+        </p>
+      </div>
+      <a class="transform cursor-pointer transition duration-500 ease-in-out hover:scale-105 hover:underline"
+        href="https://github.com/aad999/todo-quest">
+        <div class="flex space-x-2 items-center justify-center">
+          <img src="./images/github.svg" alt="" srcset="" class="w-5">
+          <p class="text-xs">/aad999/todo-quest/</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <script src="./script.js" defer></script>
+</body>
+
+</html>
