@@ -1,107 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-::-webkit-scrollbar {
-  display: none;
+.overlay-screen{
+    @apply
+    fixed z-50
+    w-screen h-screen
+    backdrop-blur bg-blue-900/50
+    justify-center items-center
+    p-10 space-y-2 sm:space-y-0 space-x-0 sm:space-x-2
 }
 
-.nav-bar {
-  @apply flex h-32 w-screen flex-row items-center justify-center space-x-5 bg-gradient-to-r;
+.search-section{
+    @apply
+    flex flex-col items-center justify-center lg:flex-row
+    h-[20rem]
+    px-20 space-y-10 space-x-0 lg:space-x-10 lg:space-y-0
 }
 
-.sub-page {
-  @apply transform cursor-pointer text-base transition duration-500 ease-in-out hover:scale-125 hover:text-red-400 hover:underline;
+.edit-search{
+    @apply
+    w-full
+    p-5
+    focus:outline-0
+    text-center
 }
 
-.master-container {
-  @apply mt-10 flex w-screen flex-col items-center justify-center space-x-0 space-y-10 lg:flex-row lg:space-x-24 lg:space-y-0;
+.search-color{
+    @apply
+    grid grid-cols-3 gap-2
 }
 
-.task-container {
-  @apply flex flex-col items-center justify-center space-y-5 sm:w-1/2;
+.color-filter{
+    @apply
+    rounded-full
+    h-[2rem] w-[2rem]
 }
 
-.edit-task {
-  @apply flex w-full flex-row items-center justify-around space-x-5 text-center lg:w-[40rem];
+.cards-section{
+    @apply
+    flex flex-wrap items-center justify-center
+    mr-9 sm:mr-0 sm:px-10 space-x-10 space-y-10
 }
 
-.task-desc {
-  @apply w-full rounded-3xl border-2 border-gray-500 bg-transparent p-2 text-center transition duration-500 ease-in-out focus:border-2 focus:border-red-400 focus:outline-0;
+.logo-card{
+    @apply
+    flex flex-col rounded-xl
+    w-[20rem] h-[20rem]
+    bg-blue-800 shadow-md
+    items-center justify-center
+    mt-10 ml-10 space-y-4
+    hover:ease-linear hover:scale-[1.01] hover:shadow-lg ease-in duration-75 cursor-pointer
 }
 
-.task-time {
-  @apply w-40 rounded-3xl border-2 border-gray-500 bg-transparent p-2 text-center transition duration-500 ease-in-out focus:border-2 focus:border-blue-700 focus:outline-0;
+.logo-icon{
+    @apply
+    font-black text-white text-3xl
 }
 
-.push {
-  @apply rounded-full p-4 transition duration-150 ease-in-out hover:scale-110 focus:scale-100;
+.search-card{
+    @apply
+    flex flex-col rounded-xl
+    w-[20rem] h-[20rem]
+    bg-white shadow-md
+    items-center justify-center
+    mt-10 ml-10 space-y-4
+    hover:ease-linear hover:scale-[1.01] hover:shadow-lg ease-in duration-75 cursor-pointer
 }
 
-.task-queue {
-  @apply flex max-h-[30rem] w-full flex-col items-center space-y-4 rounded-3xl p-2 lg:w-[45rem];
+.add-card{
+    @apply
+    flex flex-col rounded-xl
+    w-[20rem] h-[20rem]
+    bg-white shadow-md
+    items-center justify-center
+    mt-10 ml-10
+    hover:ease-linear hover:scale-[1.01] hover:shadow-lg ease-in duration-75 cursor-pointer
 }
 
-.task-queue::-webkit-scrollbar {
-  display: none;
-}
-
-.pushed {
-  @apply flex w-full items-center justify-center space-x-5 lg:w-[40rem];
-}
-
-.pushed-desc {
-  @apply w-full truncate rounded-3xl border-2 p-2 text-center transition duration-500 ease-in-out focus:border-2 focus:outline-0;
-}
-
-.pushed-time {
-  @apply w-40 rounded-3xl border-2 p-2 text-center transition duration-500 ease-in-out focus:border-2 focus:outline-0;
-}
-
-.icon {
-  @apply w-5 sm:w-6;
+.main-icon{
+    @apply
+    flex flex-col rounded-full
+    w-24 h-24
+    outline-dashed outline-2 outline-blue-500
+    items-center justify-center text-3xl text-blue-500
 }
 
 .card{
-  @apply flex items-center justify-center
+    @apply
+    flex flex-col
+    w-[20rem] h-[20rem]
+    justify-center items-start 
+    rounded-xl
+    p-10 space-y-5 shadow-md
+    hover:ease-linear hover:scale-[1.01] hover:shadow-lg ease-in duration-75
+    cursor-pointer
 }
 
-.hero-card {
-  @apply h-72 w-72 rounded-3xl bg-white;
+.heading{
+    @apply
+    h-10
+    text-3xl line-clamp-1
 }
 
-.cards-container {
-  @apply grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 items-center justify-center;
+.content{
+    @apply
+    text-lg line-clamp-4
 }
 
-.card-image {
-  @apply h-52 rounded-3xl object-cover transition delay-100 duration-500 ease-in-out hover:translate-y-5 hover:skew-x-2 hover:skew-y-2 hover:scale-105 hover:shadow-2xl;
+.edit-text{
+    @apply
+    flex flex-col rounded-xl
+    w-full sm:w-[30rem] h-96 sm:h-1/2
+    justify-start items-start
+    visited:shadow-md
+    p-10 space-y-5
 }
 
-.hero-image {
-  @apply h-64 rounded-3xl object-cover transition delay-100 duration-500 ease-in-out hover:translate-y-5 hover:skew-x-2 hover:skew-y-2 hover:scale-105 hover:shadow-2xl;
+.edit-heading{
+    @apply
+    w-full
+    bg-transparent
+    focus:outline-0
+    text-3xl
 }
 
-.info {
-  @apply h-screen w-screen;
+.edit-content{
+    @apply 
+    w-full h-[100%]
+    bg-transparent
+    focus:outline-0
+    text-lg resize-none 
 }
 
-.info-screen {
-  @apply -top-4 flex h-screen w-screen justify-center p-10;
+.color-options{
+    @apply
+    flex items-center
+    space-x-1 sm:space-x-2
 }
 
-.info-box{
-  @apply shadow-lg rounded-3xl md:w-1/2 w-80 h-fit backdrop-blur-3xl bg-white/10 p-7 pb-10;
+.color-selector{
+    @apply
+    rounded-full
+    h-[1rem] w-[1rem]
 }
 
-.info-heading{
-  @apply font-extrabold text-xl text-white text-center;
+.selected{
+    @apply
+    scale-90
+    outline outline-offset-2 outline-2 outline-black
 }
 
-.info-para{
-  @apply mt-5 text-sm text-white text-justify;
+.edit-menu{
+    @apply
+    flex sm:flex-col rounded-xl
+    w-full h-16 sm:w-16 sm:h-1/2
+    justify-around items-center
+    bg-white p-5 shadow-md
 }
 
-.info-footer{
-  @apply mt-5 text-xs text-white text-justify italic;
+.icon{
+    @apply
+    w-4 cursor-pointer
+}
+
+.select-color{
+    @apply
+    w-4 h-4
+    rounded-full 
+    cursor-pointer
 }

@@ -2,72 +2,81 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="images/favicon-32x32.png" />
-  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-
-  <title>Shortly</title>
-  <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Flash Cards</title>
 </head>
 
-<body class="bg-black flex flex-col space-y-5 justify-center items-center text-white">
-  <div class="nav-bar">
-    <div class="sub-page nav-tasks">tasks</div>
-    <div class="sub-page nav-cards">cards</div>
-    <div class="sub-page reset" onclick="reset()">reset</div>
-    <div class="sub-page nav-coins">
-      <div class="flex space-x-2">
-        <img src="./images/coins.svg" alt="" srcset="" class="coins-icon w-5">
-        <p class="coins">0</p>
-      </div>
-    </div>
-  </div>
-  <section class="tasks">
-    <div class="master-container">
-      <div class="hero-img">
-        <img src="./images/hawk_eye.webp" alt="" srcset="" class="hero-image hover:shadow-violet-500">
-      </div>
-      <div class="task-container">
-        <div class="edit-task">
-          <input title="task-desc" type="text" name="task" id="task-desc" class="task-desc" placeholder="type...">
-          <!-- <input title="task-time" type="time" name="task-time" id="task-time" class="task-time"> -->
-          <button title="push" type="submit"
-            class="push bg-blue-500/50 border-2 border-blue-500 shadow-sm hover:shadow-blue-400"><img
-              src="./images/down.svg" alt="" srcset="" class="icon"></button>
+<body class="bg-slate-200 pb-20">
+
+    <!--OVERLAY SCREEN-->
+    <!--*************-->
+    <div class="hidden overlay-screen">
+
+        <!--EDIT TEXT-->
+        <div class="edit-text bg-white">
+            <input title="Heading" type="text" class="edit-heading" placeholder="Heading">
+            <textarea title="Content" class="edit-content" placeholder="Content"></textarea>
+            <div class="flex">
+                <textarea title="color-index" class="color-index hidden">0</textarea>
+                <div class="color-options">
+                    <button title="color1" type="button" class="color-selector bg-black"
+                        onclick=update_color(0)></button>
+                    <button title="color1" type="button" class="color-selector bg-lime-500"
+                        onclick=update_color(1)></button>
+                    <button title="color2" type="button" class="color-selector bg-cyan-200"
+                        onclick=update_color(2)></button>
+                    <button title="color3" type="button" class="color-selector bg-violet-300"
+                        onclick=update_color(3)></button>
+                    <button title="color4" type="button" class="color-selector bg-rose-300"
+                        onclick=update_color(4)></button>
+                    <button title="color5" type="button" class="color-selector bg-amber-200"
+                        onclick=update_color(5)></button>
+                </div>
+            </div>
         </div>
-        <div class="task-queue">
+
+        <!--EDIT MENU-->
+        <div class="edit-menu">
+            <img class="icon option" src="./images/done.svg" alt="">
+            <img class="icon option" src="./images/delete.svg" alt="">
+            <img class="icon option" src="./images/close.svg" alt="">
         </div>
-      </div>
     </div>
-  </section>
-  <section class="cards hidden">
-    <div class="cards-container w-screen p-10">
-      <div class="blank-end space-x-0"></div>
+
+    <!--CARDS-SECTION-->
+    <!--*************-->
+    <div class="cards-section">
+
+        <!-- LOGO CARD -->
+        <div class="logo-card">
+            <div class="logo-icon">
+                <h1 class="logo-text">Flash<br>Cards</h1>
+            </div>
+        </div>
+
+        <!--SEARCH CARD-->
+        <div class="search-card">
+            <input title="edit-search" type="text" class="edit-search bg-white" placeholder="search" onkeyup=search()>
+            <div class="search-color">
+                <button title="color1" type="button" class="color-filter bg-black" onclick=filter(0)></button>
+                <button title="color1" type="button" class="color-filter bg-lime-500" onclick=filter(1)></button>
+                <button title="color2" type="button" class="color-filter bg-cyan-200" onclick=filter(2)></button>
+                <button title="color3" type="button" class="color-filter bg-violet-300" onclick=filter(3)></button>
+                <button title="color4" type="button" class="color-filter bg-rose-300" onclick=filter(4)></button>
+                <button title="color5" type="button" class="color-filter bg-amber-200" onclick=filter(5)></button>
+            </div>
+        </div>
+
+        <!--ADD CARD-->
+        <div class="add-card">
+            <div class="main-icon">
+                <img src="./images/plus.svg" class="icon" alt="">
+            </div>
+        </div>
     </div>
-  </section>
-  <section class="info hidden">
-    <div class="info-screen bg-gradient-to-b from-black to-violet-700">
-      <div class="info-box">
-        <h1 class="info-heading">The Todo Quest</h1>
-        <p class="info-para">How about turning your boring to-do list into an epic adventure? Welcome to The Todo Quest,
-          where every task is a challenge, and every challenge is a reward. Here’s how it works: you earn 20 coins for
-          adding a task, and 100 coins for completing it. But be careful: you lose 50 coins for deleting a task. And if
-          you go broke, you lose all your cards too. Yikes! You can spend your coins on awesome Marvel Superhero cards
-          from the cards section. So, stay motivated and pursue your goals. Who wouldn’t want to be Captain America or
-          Spider Man?
-        </p>
-
-        <p class="info-footer">
-          *Price of ith card from top is ix300.
-        </p>
-
-      </div>
-    </div>
-  </section>
-
-  <script src="./script.js" defer></script>
 </body>
-
+<script src="./script.js"></script>
 </html>
