@@ -51,7 +51,7 @@
 }
 
 .pushed {
-  @apply flex w-full items-center justify-center space-x-5 lg:w-[40rem];
+  @apply flex w-full items-center justify-center space-x-5 lg:w-[36rem] xl:w-[40rem];
 }
 
 .pushed-desc {
@@ -71,7 +71,7 @@
 }
 
 .hero-card {
-  @apply flex max-h-[30rem] flex-col;
+  @apply flex flex-col lg:self-stretch;
 }
 
 .cards-container {
@@ -83,7 +83,7 @@
 }
 
 .hero-image {
-  @apply h-64 self-start rounded-3xl object-cover transition delay-100 duration-500 ease-in-out hover:translate-y-5 hover:skew-x-2 hover:skew-y-2 hover:scale-105 hover:shadow-2xl lg:h-80;
+  @apply h-64 rounded-3xl object-cover transition delay-100 duration-500 ease-in-out hover:translate-y-5 hover:skew-x-2 hover:skew-y-2 hover:scale-105 hover:shadow-2xl lg:h-80;
 }
 
 .info {
