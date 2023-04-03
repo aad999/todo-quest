@@ -1,2 +1,3 @@
-# todo-quest
-The Todo Quest - a todo list app with reward features
+# The Todo Quest
+
+![alt text](https://raw.githubusercontent.com/aad999/todo-quest/main/images/logo.png)
