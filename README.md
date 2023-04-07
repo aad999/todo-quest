@@ -32,7 +32,7 @@ https://user-images.githubusercontent.com/108756447/229644777-704ca8c6-16e0-420f
 * Yes! You loose 50 coins per task you delete.
 * Also if at any moment of time, you run out of coins, then the game auto-resets and you eventually loose all your cards and collections.
 
-Uploading 03 loose collections - Made with Clipchamp.mp4…
+https://user-images.githubusercontent.com/108756447/230563999-00c55014-4a4e-4cd5-920e-8c508e3ea06b.mp4
 
 ### How to reset/restart the game?
 * Click on **reset**.
