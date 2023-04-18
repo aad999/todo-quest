@@ -241,7 +241,7 @@ function update_points(to_add) {
         localStorage.setItem("points", curr_points);
     }
     else {
-        if (curr_points < 0 && selection != 0) {
+        if (curr_points < 0 && points != 0) {
                                               // if points < 0 and selection is not 0
             reset();
                                               // reset
