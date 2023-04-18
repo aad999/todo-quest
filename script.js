@@ -1,7 +1,18 @@
+// JSON                                     =>      js object notation (key value pairs format)
+// JSON.parse(string)                       =>      convert json string to js object
+// JSON.stringify(object)                   =>      convert js object to json string
+// localStorage.getItem("name")             =>      get item from local storage associated to "name"
+// localStorage.setItem("name", string)     =>      set item string to in local storage and associate it to "name"
+
 var tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
 var selection = JSON.parse(localStorage.getItem("selection") || 0);
 var points = JSON.parse(localStorage.getItem("points") || 0);
 var heroes = JSON.parse(localStorage.getItem("heroes") || "[]");
+                                              // local storage :
+                                                // tasks (tasks pushed),
+                                                // selection (hero selected),
+                                                // points (points collected),
+                                                // heroes (status and details fo heroes)
 function update_tasks_storage(){
     tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
 }
@@ -78,8 +89,10 @@ function update_heroes_storage(){
     if(heroes == null || heroes == undefined || heroes == 0 || heroes == "[]") localStorage.setItem("heroes", JSON.stringify(heroes_list));
     heroes = JSON.parse(localStorage.getItem("heroes") || "[]");
 }
+                                              // updating functions
 
 const restore_local_storage = function () {
+                                              // restore local storage
 
     localStorage.setItem("heroes", JSON.stringify("[]"));
     update_heroes_storage();
@@ -94,12 +107,14 @@ const restore_local_storage = function () {
 }
 
 function reset(){
+                                              // reset : restore + reload
     restore_local_storage();
     location.reload();
     show();
 }
 
 const initialize_local_storage = function () {
+                                              // initialize : update
 
     update_heroes_storage();
 
@@ -111,37 +126,45 @@ const initialize_local_storage = function () {
 }
 
 initialize_local_storage();
+                                              // automatically initialize for every load
 
 
 
 
 function show_nav() {
+                                              // show nav with color from details of the hero selected
     document.querySelector(".nav-bar").className = "nav-bar";
     document.querySelector(".nav-bar").classList.add(`${heroes[selection].col1[1]}`);
     document.querySelector(".nav-bar").classList.add(`${heroes[selection].col2[1]}`);
     console.log(document.querySelector(".nav-bar").className);
 }
 function show_hero_image() {
+                                              // show hero image of the hero selected
     document.querySelector(".hero-image").setAttribute("src", `./images/${heroes[selection].name}.webp`);
     document.querySelector(".hero-image").setAttribute("class", `hero-image ${heroes[selection].col3}`);
 }
 function show_cards() {
+                                              // show cards
     document.querySelector(".cards-container").innerHTML = `
         <div class="blank-end space-x-0"></div>`;
     heroes.forEach((hero, index) => {
+                                              // for each hero
         let affordable = false;
         if (points >= index * 300) affordable = true;
+                                              // find its affordability
         let name = hero.name;
         let col1 = hero.col1[1];
         let col2 = hero.col2[1];
         let col3 = hero.col3;
         let bought = hero.bought;
+                                              // details of the hero
         if(index == 0){
             console.log(name, "bought");
             let to_insert = `<div class="card">
             <img src="./images/${name}.webp" alt="" srcset="" index="${index}" class="card-image ${col3}" onclick=buy(${index})>
             </div>`;
             document.querySelector(".blank-end").insertAdjacentHTML("beforebegin", to_insert);
+                                              // if index is 0 : always visible
         }
         else if (bought) {
             console.log(name, "bought");
@@ -149,6 +172,7 @@ function show_cards() {
             <img src="./images/${name}.webp" alt="" srcset="" index="${index}" class="card-image ${col3}" onclick=buy(${index})>
             </div>`;
             document.querySelector(".blank-end").insertAdjacentHTML("beforebegin", to_insert);
+                                              // if index != 0 and bought : visible
         }
         else if (!affordable) {
             console.log(name, "affordable");
@@ -156,6 +180,7 @@ function show_cards() {
             <img src="./images/locked.png" alt="" srcset="" index="${index}" class="card-image ${col3}" onclick=buy(${index})>
             </div>`;
             document.querySelector(".blank-end").insertAdjacentHTML("beforebegin", to_insert);
+                                              // if index != 0 and unbought, and unaffordable : black
         }
         else if (!bought) {
             console.log(name, "not bought");
@@ -163,33 +188,42 @@ function show_cards() {
             <img src="./images/${name}_unbought.png" alt="" srcset="" index="${index}" class="card-image ${col3}" onclick=buy(${index})>
             </div>`;
             document.querySelector(".blank-end").insertAdjacentHTML("beforebegin", to_insert);
+                                              // if index != 0 and unbought and affordable : semi-visible
         }
     });
 }
 function show_tasks() {
+                                              // show tasks
     console.log(selection);
     document.querySelector(".task-queue").innerHTML = "";
     tasks.forEach((task, index) => {
+                                              // for each task
         let to_insert = `<div class="pushed">
             <div class="pushed-desc bg-gradient-to-r ${heroes[selection].col1[1]} ${heroes[selection].col2[1]} border-white">${task}</div>
             <button index="${index}" title="push" type="submit" class="push delete bg-amber-500/50 border-2 border-amber-500 shadow-sm hover:shadow-amber-400" onclick=delete_task(this)><img src="./images/delete.svg" alt="" srcset="" class="icon"></button>
             <button index="${index}" title="push" type="submit" class="push done bg-green-500/50 border-2 border-green-500 shadow-sm hover:shadow-green-400" onclick=done_task(this)><img src="./images/done.svg" alt="" srcset="" class="icon"></button>
         </div>`
+                                              // colors from the selected hero
         document.querySelector(".task-queue").innerHTML = to_insert + document.querySelector(".task-queue").innerHTML;
+                                              // insert html
     });
 }
 function show_info(){
+                                              // show info
     document.querySelector(".info-screen").className = "info-screen bg-gradient-to-b from-black";
     document.querySelector(".info-screen").classList.add(`${heroes[selection].col2[1]}`);
+                                              // background color from the selected hero
     console.log(document.querySelector(".info-screen").className);
 }
 function show() {
+                                              // show : nav, image, cards, tasks, info
     show_nav();
     show_hero_image();
     show_cards();
     show_tasks();
     show_info();
 }
+                                              // automatically show for every load
 show();
 
 
@@ -201,13 +235,16 @@ show();
 
 var curr_points = points;
 function update_points(to_add) {
+                                              // update points
     curr_points += to_add;
     if (curr_points > 0) {
         localStorage.setItem("points", curr_points);
     }
     else {
         if (curr_points < 0 && selection != 0) {
+                                              // if points < 0 and selection is not 0
             reset();
+                                              // reset
         }
         curr_points = 0;
         localStorage.setItem("points", curr_points);
@@ -220,6 +257,7 @@ function update_points(to_add) {
     //
 }
 update_points(0);
+                                              // update points automatically for every load
 
 
 
