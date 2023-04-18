@@ -14,11 +14,11 @@
 
 <body class="bg-black flex flex-col space-y-5 items-center text-white min-h-screen">
   <div class="nav-bar">
-                                              // nav bar section : nav tasks, nav cards, reset, nav coins
+                                              <!--nav bar section : nav tasks, nav cards, reset, nav coins-->
     <div class="sub-page nav-tasks">tasks</div>
     <div class="sub-page nav-cards">cards</div>
     <div class="sub-page reset" onclick="reset()">reset</div>
-                                                      // resest : onclick reset()
+                                                      <!--resest : onclick reset()-->
     <div class="sub-page nav-coins">
       <div class="flex space-x-2">
         <img src="./images/coins.svg" alt="" srcset="" class="coins-icon w-5">
@@ -27,14 +27,14 @@
     </div>
   </div>
   <section class="tasks">
-                                              // tasks section : hero card, task container
+                                              <!--tasks section : hero card, task container-->
     <div class="master-container">
       <div class="hero-card">
-                                                      // hero card
+                                                      <!--hero card-->
         <img src="./images/hawk_eye.webp" alt="" srcset="" class="hero-image hover:shadow-violet-500">
       </div>
       <div class="task-container">
-                                                      // task container : edit task, task queue
+                                                      <!--task container : edit task, task queue-->
         <div class="edit-task">
           <input title="task-desc" type="text" name="task" id="task-desc" class="task-desc" placeholder="type...">
           <button title="push" type="submit"
@@ -42,23 +42,23 @@
               src="./images/down.svg" alt="" srcset="" class="icon"></button>
         </div>
         <div class="task-queue">
-                                                              // task queue : initially empty
+                                                              <!--task queue : initially empty-->
         </div>
       </div>
     </div>
   </section>
   <section class="cards hidden">
-                                              // cards : cards container, initially hidden
+                                              <!--cards : cards container, initially hidden-->
     <div class="cards-container w-screen p-10">
-                                                      // cards container : initially empty
+                                                      <!--cards container : initially empty-->
       <div class="blank-end space-x-0"></div>
     </div>
   </section>
   <section class="info hidden">
-                                              // info : info box, initially hidden
+                                              <!--info : info box, initially hidden-->
     <div class="info-screen bg-gradient-to-b from-black to-violet-700">
       <div class="info-box">
-                                                      // info box : info heading, info para, info footer
+                                                      <!--info box : info heading, info para, info footer-->
         <h1 class="info-heading">The Todo Quest</h1>
         <p class="info-para">How about turning your boring to-do list into an epic adventure? Welcome to The Todo Quest,
           where every task is a challenge, and every challenge is a reward. Here’s how it works: you earn 20 coins for
@@ -83,7 +83,7 @@
   </section>
 
   <script src="./script.js" defer></script>
-                                              // importing script for index
+                                              <!--importing script for index-->
 </body>
 
 </html>
